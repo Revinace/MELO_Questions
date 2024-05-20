@@ -39,22 +39,18 @@ body {
   cursor: pointer;
   user-select: none;
   transition: transform 0.5s;
-  object-fit: cover;
-  object-position: 50% 50%;
-  background-color: #f0f8ff;
-  color: #333;
-
-}
-
-.card questionText {
+  background: linear-gradient(0deg, rgb(0,0,117), rgb(76, 76, 255)) no-repeat;
+  color: #ffffff;
   text-align: center;
-  vertical-align: middle;
-  /* Additional styling (optional) */
-  margin: 0;
+  display: flex;
+  align-items: center;
+  padding: 5%;
+  justify-content: center;
 }
 
 #like,
-#dislike {
+#dislike,
+#refresh {
   font-size: 6vh;
   border-radius: 50%;
   padding: 20px;
@@ -83,7 +79,13 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+#refresh {
+  color: #001aff;
+  background-color: rgba(0, 0, 0, 0);
+}
+
 #icons {
+  width: 30%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

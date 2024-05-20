@@ -3,7 +3,7 @@ class Card {
     question,
     onDismiss,
     onLike,
-    onDislike
+    onDislike,
   }) {
     this.question = question;
     this.onDismiss = onDismiss;
@@ -16,6 +16,7 @@ class Card {
   #startPoint;
   #offsetX;
   #offsetY;
+
 
   #isTouchDevice = () => {
     return (('ontouchstart' in window) ||
@@ -37,6 +38,32 @@ class Card {
       this.#listenToTouchEvents();
     } else {
       this.#listenToMouseEvents();
+    }
+
+    document.getElementById('button_refresh').addEventListener('click', this.#button_refresh_on_click);
+    
+  }
+
+  #button_refresh_on_click = () => {
+    location.reload();
+  }
+
+  button_addEventListener = () => {
+    document.getElementById('button_dislike').addEventListener('click', this.#button_dislike_on_click);
+    document.getElementById('button_like').addEventListener('click', this.#button_like_on_click);
+  }
+
+  #button_dislike_on_click = () => {
+    if(this.element.style.cssText[5]==0) {
+      this.element.style.transform = `translate(${-270}px, ${40}px) rotate(${-27}deg)`;
+      this.#dismiss(-1);
+    }
+  }
+
+  #button_like_on_click = () => {
+    if(this.element.style.cssText[5]==0) {
+      this.element.style.transform = `translate(${270}px, ${40}px) rotate(${27}deg)`;
+      this.#dismiss(1);
     }
   }
 
@@ -116,12 +143,14 @@ class Card {
     document.removeEventListener('mousemove', this.#handleMouseMove);
     document.removeEventListener('touchend', this.#handleTouchEnd);
     document.removeEventListener('touchmove', this.#handleTouchMove);
+    document.getElementById('button_dislike').removeEventListener('click', this.#button_dislike_on_click);
+    document.getElementById('button_dislike').removeEventListener('click', this.#button_like_on_click);
     this.element.style.transition = 'transform 1s';
     this.element.style.transform = `translate(${direction * window.innerWidth}px, ${this.#offsetY}px) rotate(${90 * direction}deg)`;
     this.element.classList.add('dismissing');
     setTimeout(() => {
       this.element.remove();
-    }, 1000);
+    }, 500);
     if (typeof this.onDismiss === 'function') {
       this.onDismiss();
     }
