@@ -12,7 +12,44 @@ body {
 }
 
 body {
-  background: linear-gradient(0deg, rgb(255, 96, 54), rgb(253, 38, 122)) no-repeat;
+  /*background: linear-gradient(0deg, rgb(255, 96, 54), rgb(253, 38, 122)) no-repeat;*/
+  background: #fbeb14;
+}
+
+#diagonal-stripes {
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 55%,
+    #07aabe 55%, 
+    #07aabe 57%,
+    transparent 57%,
+    transparent 100%
+  );
+}
+
+#diagonal-stripes2 {
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    -25deg,
+    transparent,
+    transparent 40%,
+    #07aabe 40%, 
+    #07aabe 42%,
+    transparent 42%,
+    transparent 59%,
+    #07aabe 59%, 
+    #07aabe 61%,
+    transparent 61%,
+    transparent 65%,
+    #07aabe 65%, 
+    #07aabe 67%,
+    transparent 67%,
+    transparent 100%
+  );
 }
 
 #outer {
@@ -26,6 +63,23 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+
+#title {
+margin-top: -10%;}
+
+#headline {
+  color: #07aabe;
+  font-size: 5vh;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+#description {
+  color: #07aabe;
+  font-size: 3vh;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 }
 
 #swiper {
@@ -48,8 +102,9 @@ body {
   cursor: pointer;
   user-select: none;
   transition: transform 0.5s;
-  background: linear-gradient(0deg, rgb(0,0,117), rgb(76, 76, 255)) no-repeat;
-  color: #ffffff;
+  /*background: linear-gradient(0deg, rgb(0,0,117), rgb(76, 76, 255)) no-repeat;*/
+  background: #e53253;
+  color: white;
   text-align: center;
   display: flex;
   align-items: center;
@@ -80,17 +135,17 @@ body {
 }
 
 #like {
-  color: red;
-  background-color: rgba(255, 255, 255, 0.5);
+  color: #07aabe;
+  background-color: black;
 }
 
 #dislike {
-  color: #ccc;
-  background-color: rgba(0, 0, 0, 0.5);
+  color: #07aabe;
+  background-color: black;
 }
 
 #refresh {
-  color: #001aff;
+  color: #07aabe;
   background-color: rgba(0, 0, 0, 0);
 }
 

@@ -47,11 +47,29 @@ function appendNewCard(q, addAnswer=true) {
   cardCount++;
 }
 
+function shuffle(array) {
+  let currentIndex = array.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+}
+
 const questions = [];
 questions.push("Ich kenne mich gut in der Bibel aus und kann z.B. grob die geschichtlichen Ereignisse in ihrer Reihenfolge bennen.");
 questions.push("Wenn mich eine Frage zu einem Bibelvers interessiert, weiß ich, wo ich eine Antwort finden könnte oder wen ich fragen kann.");
 questions.push("Ich liebe Musik");
 questions.push("Ich tausche mich gerne mit anderen aus");
+
+shuffle(questions);
 
 // first 5 cards
 for (let i = 0; i < questions.length; i++) {
