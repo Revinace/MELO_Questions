@@ -1,8 +1,5 @@
-// DOM
 const swiper = document.querySelector('#swiper');
 const cards_query = [];
-const like = document.querySelector('#like');
-const dislike = document.querySelector('#dislike');
 const q_idx = [];
 const one_two_eight = "Dein persönlicher Zugang zur Bibel sind Spiele. Durch interaktive und spielerische Erlebnisse entdeckst du die Botschaften der Heiligen Schrift auf eine spannende und unterhaltsame Weise. \n \n Wenn du diese Leidenschaft weiter vertiefen und mehr über die Bibel lernen möchtest, dann schau doch mal bei unserer Gaming Station vorbei! Hier hast du die Möglichkeit, durch verschiedene Spiele und Aktivitäten dein Wissen über die Bibel zu erweitern und dabei jede Menge Spaß zu haben."
 const three_four_seven = "Dein ganz persönlicher Zugang zur Bibel ist Musik. Ob durch das Hören oder das Spielen von Liedern – die Klänge und Texte berühren dein Herz und helfen dir, die Botschaften der Heiligen Schrift zu verstehen und zu erleben. \n \n Wenn du deine Leidenschaft für Musik weiter vertiefen und Worship mal auf eine neue Weise erleben möchtest, dann schau doch mal bei unserer Musik Station vorbei! Hier hast du die Möglichkeit, Bibeltexte auf musikalische Weise zu vertiefen, bzw. mit Musik darüber zu meditieren und zu beten. Egal ob du selbst aktiv werden oder einfach nur zuhören möchtest – bei uns findest du genau den richtigen Platz, um deine spirituelle Reise durch Musik fortzusetzen."
@@ -56,18 +53,14 @@ function appendNewCard(q, addAnswer=true) {
   const card = new Card({
     question: q,
     onLike: () => {
-      like.style.animationPlayState = 'running';
-      like.classList.toggle('trigger');
       cardCount--;
       if(addAnswer) answers.push(true);
       updateCards();
     },
     onDislike: () => {
-      dislike.style.animationPlayState = 'running';
-      dislike.classList.toggle('trigger');
       cardCount--;
       if(addAnswer) answers.push(false);
-      updateCards();  
+      updateCards();
     },
   });
   if(!addAnswer) card.element.style.fontSize = "42%";

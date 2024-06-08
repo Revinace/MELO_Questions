@@ -69,14 +69,14 @@ body {
 margin-top: -10%;}
 
 #headline {
-  color: #07aabe;
+  color: #e53253;
   font-size: 5vh;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
 }
 
 #description {
-  color: #07aabe;
+  color: #e53253;
   font-size: 3vh;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
@@ -104,13 +104,14 @@ margin-top: -10%;}
   transition: transform 0.5s;
   /*background: linear-gradient(0deg, rgb(0,0,117), rgb(76, 76, 255)) no-repeat;*/
   background: #e53253;
-  color: white;
+  color: black;
   text-align: center;
   display: flex;
   align-items: center;
   padding: 5%;
   justify-content: center;
   font-size: 55%;
+  white-space: pre-wrap;
 }
 
 #like,
