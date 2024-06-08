@@ -126,7 +126,6 @@ margin-top: -10%;}
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
-  /* don't run animation at the beginning */
   animation-play-state: paused;
 }
 
