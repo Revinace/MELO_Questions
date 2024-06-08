@@ -110,43 +110,9 @@ margin-top: -10%;}
   align-items: center;
   padding: 5%;
   justify-content: center;
-  font-size: 55%;
   white-space: pre-wrap;
-}
-
-#like,
-#dislike,
-#refresh {
-  font-size: 5vh;
-  border-radius: 50%;
-  padding: 20px;
-  position:relative;
-  z-index: 1;
-  animation-name: animation1;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: both;
-  animation-play-state: paused;
-}
-
-#like.trigger,
-#dislike.trigger {
-  animation-name: animation2;
-}
-
-#like {
-  color: #07aabe;
-  background-color: black;
-}
-
-#dislike {
-  color: #07aabe;
-  background-color: black;
-}
-
-#refresh {
-  color: #07aabe;
-  background-color: rgba(0, 0, 0, 0);
+  flex-direction: column;
+  font-size: 1.5vh;
 }
 
 #icons {
@@ -156,26 +122,12 @@ margin-top: -10%;}
   justify-content: space-between;
 }
 
-@keyframes animation1 {
-
-  0%,
-  100% {
-    opacity: 0.2;
-  }
-
-  50% {
-    opacity: 1;
-  }
+.image-button {
+  width: 80px;
+  border-radius: 50px;
+  background: transparent;
 }
 
-@keyframes animation2 {
-
-  0%,
-  100% {
-    opacity: 0.2;
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
+.image-button:hover {
+  opacity: 0.6; /* Slight transparency on hover */
+} 

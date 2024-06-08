@@ -3,9 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Card Swiper</title>
+  <title>MELO Pratice Room Questions</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -19,15 +18,15 @@
         </div>
         <div id="swiper"></div>
         <div id="icons">
-          <ion-button id="button_dislike">
-            <ion-icon slot="icon-only" id="dislike" name="close-outline"></ion-icon>
-          </ion-button>
-          <ion-button id="button_refresh">
-            <ion-icon slot="icon-only", id="refresh" name="refresh-outline"></ion-icon>
-          </ion-button>
-          <ion-button id="button_like">
-            <ion-icon slot="icon-only", id="like" name="checkmark-outline"></ion-icon>
-          </ion-button>
+          <button type="button" id="button_dislike" class="image-button">
+            <img src="close-outline.svg" alt="Nein" id="dislike">
+          </button>
+          <button type="button" id="button_refresh" class="image-button">
+            <img src="refresh-outline.svg" alt="Neu">
+          </button>
+          <button type="button" id="button_like" class="image-button">
+            <img src="checkmark-outline.svg" alt="Ja">
+          </button>
         </div>
       </div>
     </div>
@@ -35,8 +34,6 @@
   
   <script src="./card.js"></script>
   <script src="./script.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

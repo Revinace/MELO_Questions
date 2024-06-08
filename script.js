@@ -18,20 +18,20 @@ function map(idx){
 
 function ret_message(answers) {
   if(answers.every(element => element === true))
-    return all_yes
+    return [all_yes, ""]
   if(answers.every(element => element === false))
-    return all_no
+    return [all_no, ""]
   if(answers[map(3)] && answers[map(4)] && answers[map(7)])
-    return three_four_seven
+    return [three_four_seven, "Musik Station \n "]
   if(answers[map(1)] && answers[map(2)] && answers[map(8)])
-    return one_two_eight
+    return [one_two_eight, "Gaming Station \n "]
   if(answers[map(3)] && answers[map(4)] && answers[map(10)])
-    return three_four_ten
+    return [three_four_ten, "Kreativecke \n "]
   if(answers[map(5)] && answers[map(6)] && answers[map(11)])
-    return five_six_eleven
+    return [five_six_eleven, "Erlebnisbereich \n "]
   if(answers[map(5)] && answers[map(6)] && answers[map(12)])
-    return five_six_twelve
-  return "Kein passender Typ"
+    return [five_six_twelve, "Erlebnisbereich \n "]
+  return ["Kein passender Typ", "Schade"]
 }
 
 function updateCards() {
@@ -45,12 +45,14 @@ function updateCards() {
   });
 
   if(cardCount==0){
-    appendNewCard(ret_message(answers), addAnswer=false);
+    const rm = ret_message(answers);
+    appendNewCard(rm[0], addAnswer=false, rm[1]);
   }
 }
 
-function appendNewCard(q, addAnswer=true) {
+function appendNewCard(q, addAnswer=true, s="") {
   const card = new Card({
+    station: s,
     question: q,
     onLike: () => {
       cardCount--;
@@ -63,7 +65,7 @@ function appendNewCard(q, addAnswer=true) {
       updateCards();
     },
   });
-  if(!addAnswer) card.element.style.fontSize = "42%";
+  if(!addAnswer) card.element.style.fontSize = "0.5vh";
   swiper.append(card.element);
   cards_query.push(card);
   cardCount++;

@@ -1,10 +1,12 @@
 class Card {
   constructor({
+    station,
     question,
     onDismiss,
     onLike,
     onDislike,
   }) {
+    this.station = station;
     this.question = question;
     this.onDismiss = onDismiss;
     this.onLike = onLike;
@@ -28,9 +30,13 @@ class Card {
     const questionCard = document.createElement('div');
     questionCard.classList.add('card');
 
-    const questionText = document.createElement('h1');
-    questionText.textContent = this.question; // Escape single quote in string
+    const stationText = document.createElement('h1');
+    stationText.textContent = this.station;
 
+    const questionText = document.createElement('h6');
+    questionText.textContent = this.question;
+
+    questionCard.appendChild(stationText);
     questionCard.appendChild(questionText);
 
     this.element = questionCard;
